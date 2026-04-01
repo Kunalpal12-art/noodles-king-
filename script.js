@@ -241,6 +241,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<ion-icon name="close-outline"></ion-icon>' 
+                : '<ion-icon name="menu-outline"></ion-icon>';
+        });
+    }
+
+    // Dropdown Toggle for Mobile
+    const dropdownTrigger = document.querySelector('.dropdown-trigger');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if (dropdownTrigger && dropdownMenu) {
+        dropdownTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdownMenu.classList.toggle('active');
+            }
+        });
+    }
+
     // Protocol Warning
     if (location.protocol === 'file:') {
         console.warn('Noodles King: Running via file://. Some features like Geolocation may be limited. Use the run.bat script for the best experience.');
