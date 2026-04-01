@@ -19,6 +19,10 @@ app.get('/login/delivery', (req, res) => {
     res.sendFile(path.join(__dirname, 'login-delivery.html'));
 });
 
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'home.html'));
+});
+
 // Send index.html for all other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

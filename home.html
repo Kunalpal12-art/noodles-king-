@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noodles King - Order Online & Book a Table</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">
+            <h1>Noodles<span>King</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#book">Book a Table</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="dropdown-trigger">Login <ion-icon name="chevron-down-outline"></ion-icon></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/login/customer">Customer Login</a></li>
+                    <li><a href="/login/delivery">Delivery Login</a></li>
+                    <li><a href="/login/dashboard">Admin Dashboard</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-extra">
+            <div class="cart-icon" id="cart-icon">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <img src="images/hero.png" alt="Noodles Background" class="hero-bg">
+        <div class="hero-content glass-panel">
+            <h2>Taste the Magic of Real Noodles</h2>
+            <p>Fresh ingredients, authentic flavors, and the best noodles in town. Skip the line, order online or book your table now!</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn primary-btn">Order Now</a>
+                <a href="#book" class="btn secondary-btn">Book Table</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Our Signature Menu</h2>
+        
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card glass-card">
+                <div class="card-img-wrapper">
+                    <img src="images/noodles.png" alt="Spicy Ramen Noodles">
+                </div>
+                <div class="card-info">
+                    <h3>Spicy Dragon Noodles</h3>
+                    <p>Our famous hand-pulled noodles in a rich, spicy broth with tender chicken.</p>
+                    <div class="card-footer">
+                        <span class="price">₹150</span>
+                        <button class="add-to-cart-btn" data-id="1" data-name="Spicy Dragon Noodles" data-price="150">
+                            <ion-icon name="add-circle-outline"></ion-icon> Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card glass-card">
+                <div class="card-img-wrapper">
+                    <img src="images/burger.png" alt="Classic Beef Burger">
+                </div>
+                <div class="card-info">
+                    <h3>King's Classic Burger</h3>
+                    <p>Double beef patty, melted cheddar, lettuce, and secret sauce on a toasted brioche.</p>
+                    <div class="card-footer">
+                        <span class="price">₹50</span>
+                        <button class="add-to-cart-btn" data-id="2" data-name="King's Classic Burger" data-price="50">
+                            <ion-icon name="add-circle-outline"></ion-icon> Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card glass-card">
+                <div class="card-img-wrapper">
+                    <img src="images/drink.png" alt="Refreshing Blue Lagoon Drink">
+                </div>
+                <div class="card-info">
+                    <h3>Blue Lagoon Soda</h3>
+                    <p>A refreshing citrus berry blast served over crushed ice.</p>
+                    <div class="card-footer">
+                        <span class="price">₹30</span>
+                        <button class="add-to-cart-btn" data-id="3" data-name="Blue Lagoon Soda" data-price="30">
+                            <ion-icon name="add-circle-outline"></ion-icon> Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="book" class="booking-section">
+        <div class="glass-booking-form">
+            <h2 class="section-title">Reserve a Table</h2>
+            <p>Avoid the wait! Book a table in advance for you and your friends.</p>
+            <form id="booking-form">
+                <div class="input-group">
+                    <label for="b-name">Full Name</label>
+                    <input type="text" id="b-name" required placeholder="John Doe">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="b-date">Date</label>
+                        <input type="date" id="b-date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="b-time">Time</label>
+                        <input type="time" id="b-time" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="b-guests">Guests</label>
+                        <input type="number" id="b-guests" min="1" max="20" required value="2">
+                    </div>
+                </div>
+                <button type="submit" class="btn primary-btn full-width">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Noodles King. All rights reserved.</p>
+    </footer>
+
+    <!-- Shopping Cart Modal Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar glass-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-btn" id="close-cart"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items added via JS -->
+            <div class="empty-cart-msg">Your cart is currently empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="order-type-toggle">
+                <input type="radio" id="pickup" name="order-type" value="pickup" checked>
+                <label for="pickup">Pickup</label>
+                <input type="radio" id="delivery" name="order-type" value="delivery">
+                <label for="delivery">Delivery</label>
+            </div>
+            <div class="delivery-address-wrapper" id="delivery-address-wrapper">
+                <textarea id="delivery-address" placeholder="Enter your delivery address..." rows="2"></textarea>
+                <button type="button" class="btn location-btn" id="get-location-btn">
+                    <ion-icon name="location-outline"></ion-icon> Use Current Location
+                </button>
+            </div>
+            <div class="cart-summary-line" id="delivery-fee-line" style="display: none;">
+                <span>Delivery Fee:</span>
+                <span id="delivery-fee-price">₹40</span>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0.00</span>
+            </div>
+            <button class="btn checkout-btn full-width" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
