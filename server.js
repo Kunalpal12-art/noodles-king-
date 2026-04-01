@@ -6,6 +6,19 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the current directory
 app.use(express.static(__dirname));
 
+// Login Routes
+app.get('/login/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login-dashboard.html'));
+});
+
+app.get('/login/customer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login-customer.html'));
+});
+
+app.get('/login/delivery', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login-delivery.html'));
+});
+
 // Send index.html for all other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

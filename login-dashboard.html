@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Login - Noodles King</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="login-body theme-dashboard">
+
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Noodles<span>King</span></h1>
+            <h2>Admin <span>Dashboard</span></h2>
+            <p>Enter your credentials to access the management portal.</p>
+        </div>
+
+        <form class="login-form">
+            <div class="input-group">
+                <label for="email">Admin Email</label>
+                <input type="email" id="email" placeholder="admin@noodlesking.com" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn primary-btn full-width">Sign In as Admin</button>
+        </form>
+
+        <a href="/" class="back-home"><ion-icon name="arrow-back-outline"></ion-icon> Back to Website</a>
+    </div>
+
+</body>
+</html>

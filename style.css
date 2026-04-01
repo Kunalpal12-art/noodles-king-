@@ -150,6 +150,55 @@ p {
     border-radius: 50%;
 }
 
+/* Nav Dropdown */
+.nav-dropdown {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    list-style: none;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background: #fafafa;
+    color: var(--primary);
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -630,9 +679,15 @@ footer {
 }
 
 .cart-summary-line {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+
+.back-home:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem;
+    }
 }
