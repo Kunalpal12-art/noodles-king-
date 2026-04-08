@@ -17,7 +17,10 @@
 }
 
 body {
-    background-color: var(--bg-main);
+    background: url("images/brand_logo.png") no-repeat center center fixed;
+    background-size: cover;
+    /* forces full-page coverage */
+    margin: 0;
     color: var(--text-main);
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -600,7 +603,7 @@ footer {
         align-items: center;
         gap: 3rem;
         transition: right 0.4s ease;
-        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
         z-index: 1000;
     }
 
@@ -733,15 +736,22 @@ footer {
 }
 
 /* --- Portal Selection Page Styles --- */
+html.portal-html {
+    background-color: #111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images/brand_logo.png?v=3');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
 .portal-body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #111 linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('images/brand_logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: transparent;
     padding: 2rem;
     font-family: 'Inter', sans-serif;
 }
@@ -799,7 +809,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     transform: translateX(-100%);
     transition: transform 0.6s;
 }
@@ -812,7 +822,7 @@ footer {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .portal-icon {
@@ -856,32 +866,112 @@ footer {
 }
 
 /* Color Themes */
-.customer-card .portal-icon { color: var(--secondary); border: 2px solid var(--secondary); }
-.delivery-card .portal-icon { color: #4caf50; border: 2px solid #4caf50; }
-.dashboard-card .portal-icon { color: var(--primary); border: 2px solid var(--primary); }
+.customer-card .portal-icon {
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.delivery-card .portal-icon {
+    color: #4caf50;
+    border: 2px solid #4caf50;
+}
+
+.dashboard-card .portal-icon {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
 
 .portal-footer {
     color: #888;
 }
 
+/* --- Comprehensive Smartphone Optimization --- */
 @media (max-width: 768px) {
     .portal-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Layout Adjustments */
+    .menu-section, .booking-section {
+        padding: 4rem 1.5rem;
+    }
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+    
+    /* Typography Adjustments */
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .portal-header h1 {
+        font-size: 2.2rem;
+    }
+    .portal-header p {
+        font-size: 1rem;
+    }
+    .login-header h1 {
+        font-size: 2.4rem;
+    }
+    h2.section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Card Padding */
+    .portal-card {
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+    }
+    .glass-booking-form {
+        padding: 2rem 1.5rem;
+    }
+    .login-card {
+        padding: 2.5rem 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .login-card {
-        padding: 2rem;
+    /* Extreme layout rules for very small phones */
+    html.portal-html, .portal-body, .login-body {
+        padding: 1rem;
+    }
+    
+    .portal-header h1 {
+        font-size: 1.8rem;
+    }
+    .login-header h1 {
+        font-size: 2rem;
+    }
+    .login-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .portal-icon {
+        font-size: 2.5rem;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .card-img-wrapper {
+        height: 180px;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .input-group input {
+        padding: 0.9rem 1.2rem;
     }
 }
+
 /* --- Login Page & Form Styles --- */
 .login-body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #111 linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('images/brand_logo.png');
+    background: #111 linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/brand_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -898,20 +988,34 @@ footer {
     padding: 4rem 3rem;
     width: 100%;
     max-width: 480px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.15);
     animation: premiumFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes premiumFadeIn {
-    from { opacity: 0; transform: translateY(40px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .login-header {
@@ -1002,6 +1106,20 @@ footer {
 }
 
 /* Theme variations for login cards */
-.theme-customer { border-top: 6px solid var(--secondary); }
-.theme-delivery { border-top: 6px solid #4caf50; }
-.theme-dashboard { border-top: 6px solid var(--primary); }
+.theme-customer {
+    border-top: 6px solid var(--secondary);
+}
+
+.theme-delivery {
+    border-top: 6px solid #4caf50;
+}
+
+.theme-dashboard {
+    border-top: 6px solid var(--primary);
+}
+
+.portal-footer {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2rem;
+}
